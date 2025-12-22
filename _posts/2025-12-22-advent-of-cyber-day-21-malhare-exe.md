@@ -2,6 +2,8 @@
 layout: post
 title: Advent of Cyber - Day 21 - Malhare.exe
 date: 2025-12-22 16:19 +0000
+category: [Advent Of Cyber]
+tags: [tryhackme, aoc, malware-analysis]
 ---
 ## HTA App - survey.hta
 Starting off this room we have a single task file **survey.hta**.
