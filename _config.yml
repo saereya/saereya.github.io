@@ -39,6 +39,7 @@ social:
   links:
     - https://x.com/sae_sec # change to your Twitter homepage
     - https://github.com/saereya # change to your GitHub homepage
+    - https://tryhackme.com/p/tomuk
 
 # Site Verification Settings
 webmaster_verifications:
@@ -65,7 +66,7 @@ analytics:
     id: # fill in your Matomo ID
     domain: # fill in your Matomo domain
   cloudflare:
-    id: # fill in your Cloudflare Web Analytics token
+    id: 646e35a2c6944f57bed471eed2f2e1c9
   fathom:
     id: # fill in your Fathom Site ID
 
