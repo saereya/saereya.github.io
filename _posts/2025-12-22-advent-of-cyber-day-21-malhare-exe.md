@@ -3,6 +3,7 @@ layout: post
 title: Advent of Cyber - Day 21 - Malhare.exe
 date: 2025-12-22 16:19 +0000
 ---
+## HTA App - survey.hta
 Starting off this room we have a single task file **survey.hta**.
 
 This is a HTA application disguised as a Festive Elf Survey.
@@ -16,6 +17,8 @@ Taking an initial look we can see functions such as
  - decodeBase64
  - RSBinaryToString
  - getQuestions
+
+### getQuestions()
 
 It looks like *getQuestions()* is a sneaky function that actually grabs the payload:
 ```vb
@@ -35,6 +38,8 @@ End Function
 ```
 
 In here we can see its grabbing the "survey questions" from *survey,best**festiival**company,com/survey_questions.txt* which looks like a typosquatted domain due to the additional *i* in **festiival**. 
+
+### provideFeedback(string)
 
 This is then provided to the *provideFeedback(string)* function which actually calls powershell with our malicious payload:
 ```vb
@@ -60,6 +65,8 @@ End Function
 ```
 
 In this function we can see its exfiltrating both logged in **UserName** and **ComputerName** via a GET request with query params to *http://survey,bestfestiivalcompany,com/details* and then finally it runs powershell.exe to execute the payload via **runObject.Run**.
+
+### Encrypted Payload
 
 The URL for the payload doesnt work but the contents are provided for us, it starts as a Base64 string:
 ```
